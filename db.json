@@ -160,12 +160,6 @@
       ]
     },
     {
-      "id": 9,
-      "title": "Parable of the Sower",
-      "subtitle": "",
-      "description": "Lauren Olamina and her family live in one of the only safe neighborhoods remaining on the outskirts of Los Angeles. Behind the walls of their defended enclave, Lauren’s father, a preacher, and a handful of other citizens try to salvage what remains of a culture that has been destroyed by drugs, disease, war, and chronic water shortages. While her father tries to lead people on the righteous path, Lauren struggles with hyperempathy, a condition that makes her extraordinarily sensitive to the pain of others. When fire destroys their compound, Lauren’s family is killed and she is forced out into a world that is fraught with danger. With a handful of other refugees, Lauren must make her way north to safety, along the way conceiving a revolutionary idea that may mean salvation for all mankind.",
-      "author": "Octavia E. Butler",
-      "img_url": "http://books.google.com/books/content?id=8thMLkahggcC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
       "users": [
         {
           "id": 8,
@@ -176,14 +170,15 @@
           "username": "steuber"
         },
         {
-          "id": 5,
-          "username": "feels-like-summer"
-        },
-        {
           "id": 12,
           "username": "tirsmode"
+        },
+        {
+          "id": 8,
+          "username": "maverick"
         }
-      ]
+      ],
+      "id": 9
     },
     {
       "id": 10,

@@ -54,13 +54,18 @@ async function fetchUsers(e){
     userObj.users.forEach(element => {
         newUserArray.push({"id": element.id, "username": element.username})
     })
-    newUserArray.push({"id": 12, "username": "tirsmode"})
     const ul = document.getElementById(e.target.attributes.id.value).previousSibling
     const li = document.createElement("li")
-    li.innerText = "tirsmode"
-    ul.appendChild(li)
+    if (newUserArray.pop().username === 'tirsmode'){
+        newUserArray.pop()
+        ul.removeChild(ul.lastChild)
+    } else {
+        newUserArray.push({"id": 12, "username": "tirsmode"})
+        li.innerText = "tirsmode"
+        ul.appendChild(li)
+    }
     fetch(`http://localhost:3000/books/${e.target.attributes.id.value}`, {
-        method: "PATCH",
+        method: "PUT",
         headers: {
             "Content-Type": "application/json",
             Accept: "application/json",
