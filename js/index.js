@@ -65,7 +65,7 @@ async function fetchUsers(e){
         ul.appendChild(li)
     }
     fetch(`http://localhost:3000/books/${e.target.attributes.id.value}`, {
-        method: "PUT",
+        method: "PATCH",
         headers: {
             "Content-Type": "application/json",
             Accept: "application/json",
