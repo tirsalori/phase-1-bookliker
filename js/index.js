@@ -47,22 +47,25 @@ function showBookInfo(e) {
     priorClickedTitle = e.target.textContent
 } 
 
-const newUserArray = []
+
 async function fetchUsers(e){
     const response = await fetch(`http://localhost:3000/books/${e.target.attributes.id.value}`)
     const userObj = await response.json()
+    const username = {"id": 12, "username": "tirsmode"}
+    const findUsername = Object.values(userObj.users).find(element => element.username === "tirsmode")
+    const newUserArray = []
     userObj.users.forEach(element => {
         newUserArray.push({"id": element.id, "username": element.username})
     })
     const ul = document.getElementById(e.target.attributes.id.value).previousSibling
     const li = document.createElement("li")
-    if (newUserArray.pop().username === 'tirsmode'){
+    if (findUsername === undefined) {
+       newUserArray.push(username)
+       li.innerText = "tirsmode"
+       ul.appendChild(li)
+    } else {
         newUserArray.pop()
         ul.removeChild(ul.lastChild)
-    } else {
-        newUserArray.push({"id": 12, "username": "tirsmode"})
-        li.innerText = "tirsmode"
-        ul.appendChild(li)
     }
     fetch(`http://localhost:3000/books/${e.target.attributes.id.value}`, {
         method: "PATCH",
@@ -73,4 +76,3 @@ async function fetchUsers(e){
         body: JSON.stringify({"users": newUserArray})
     })
 }
-
